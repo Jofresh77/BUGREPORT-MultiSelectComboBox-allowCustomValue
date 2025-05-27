@@ -16,9 +16,7 @@ import org.vaadin.lineawesome.LineAwesomeIconUrl;
 public class TestView extends Composite<VerticalLayout> {
 
     public TestView() {
-        CustomMultiSelectionComboBox multiSelectComboBox = new CustomMultiSelectionComboBox(
-                "test",
-                (e) -> true);
+        CustomMultiSelectionComboBox multiSelectComboBox = new CustomMultiSelectionComboBox("test");
         getContent().setWidth("100%");
         getContent().getStyle().set("flex-grow", "1");
         multiSelectComboBox.setLabel("Multi-Select Combo Box");
