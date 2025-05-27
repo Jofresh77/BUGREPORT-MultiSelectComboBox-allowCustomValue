@@ -22,30 +22,6 @@ public class CustomMultiSelectionComboBox extends MultiSelectComboBox<String> {
 				return;
 			}
 
-			var itemToAdd = event.getDetail();
-			if (itemToAdd.contains("||") || itemToAdd.contains(",")) {
-				String[] values = itemToAdd.split("\\|\\||,");
-				Set<String> currentItems = new LinkedHashSet<>(getValue());
-
-				for (String value : values) {
-					String trimmedValue = value.trim();
-					if (!trimmedValue.isEmpty() && validator.test(trimmedValue)) {
-						currentItems.add(trimmedValue);
-					}
-				}
-
-				updateItems(currentItems);
-			} else {
-				String trimmedValue = itemToAdd.trim();
-				if (!trimmedValue.isEmpty() && validator.test(trimmedValue)) {
-					var items = new LinkedHashSet<>(getValue());
-					if (!items.contains(trimmedValue)) {
-						items.add(trimmedValue);
-						updateItems(items);
-					}
-				}
-			}
-
 			focus();
 		});
 

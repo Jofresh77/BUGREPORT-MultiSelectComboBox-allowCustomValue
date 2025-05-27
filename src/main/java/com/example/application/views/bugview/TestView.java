@@ -26,7 +26,4 @@ public class TestView extends Composite<VerticalLayout> {
         multiSelectComboBox.setWidth("min-content");
         getContent().add(multiSelectComboBox);
     }
-
-    record SampleItem(String value, String label, Boolean disabled) {
-    }
 }
